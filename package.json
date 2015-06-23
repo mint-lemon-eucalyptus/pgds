@@ -1,0 +1,25 @@
+{
+  "name": "pgds",
+  "version": "0.1.3",
+  "description": "postgres DAO middleware",
+  "main": "index.js",
+  "private": true,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mint-lemon-eucalyptus/pgds.git"
+  },
+  "keywords": [
+    "postgresql",
+    "DAO"
+  ],
+  "dependencies": {
+    "pg": "*"
+  },
+  "author": "mint-lemon-eucalyptus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mint-lemon-eucalyptus/pgds/issues"
+  },
+  "homepage": "https://github.com/mint-lemon-eucalyptus/pgds"
+}
