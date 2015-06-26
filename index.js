@@ -43,6 +43,9 @@ var Postgres = function (host, dbname, user, pass) {
             );
         });
     }
+    this.close = function () {
+        PG.end();
+    }
     return this;
 }
 
