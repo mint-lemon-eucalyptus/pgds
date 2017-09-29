@@ -7,7 +7,7 @@ var PG = require('pg');
  * @property {String} message
  */
 
-var Postgres = function (host, dbname, user, pass) {
+var Postgres = function (host, dbname, user, pass, poolSize) {
     var pg = this;
     /**
      * function runs given psql query
@@ -18,6 +18,11 @@ var Postgres = function (host, dbname, user, pass) {
      * @param {Array<any>} q.values
      * @param {function(err<{PostgresError}>,rs<{Object}>)} callback
      */
+
+    if (typeof poolSize === "number" && poolSize > 10) {
+        PG.defaults.poolSize = poolSize;
+    }
+
     this.postgresQuery = function (q, callback) {
         PG.connect('postgres://' + user + ':' + pass + '@' + host + ':5432/' + dbname, function (err, db, done) {
             if (err) {
